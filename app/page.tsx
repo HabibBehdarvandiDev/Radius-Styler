@@ -81,10 +81,6 @@ export default function Home() {
             />
           </div>
 
-          <button
-            className="px-6 py-2 text-white bg-blue-600 rounded-lg text-center flex justify-center align-middle items-center self-center"
-            onClick={handleReset}
-          >Reset</button>
 
 
           <div className="input-wrapper bg-gray-700 w-fit overflow-hidden rounded-lg my-2">
