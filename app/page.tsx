@@ -1,5 +1,13 @@
+"use client"
+import { useState } from "react"
+
 
 export default function Home() {
+  const [topLeft,setTopLeft] = useState<String>();
+  const [topRight,setTopRight] = useState<String>();
+  const [bottomLeft,setBottomLeft] = useState<String>();
+  const [bottomRight,setBottomRight] = useState<String>();
+
   return (
     <main className="relative w-screen h-screen bg-gray-800">
       <section
