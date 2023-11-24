@@ -39,6 +39,15 @@ export default function Home() {
     borderBottomRightRadius: bottomRight ? `${bottomRight}px` : '0',
   };
 
+  const copyCSS = () => {
+    const cssText = `{
+      border: 1rem solid white;
+      border-radius: ${shapeStyle.borderTopLeftRadius} ${shapeStyle.borderTopRightRadius} ${shapeStyle.borderBottomLeftRadius} ${shapeStyle.borderBottomRightRadius};
+    }`;
+
+    navigator.clipboard.writeText(cssText);
+  };
+
 
   return (
     <main className="relative w-screen h-screen bg-gray-800">
@@ -110,6 +119,10 @@ export default function Home() {
               </div>
             )
           }
+          <button
+            className="mt-2 px-4 py-2 bg-blue-600 text-white rounded"
+            onClick={copyCSS}
+          >Copy CSS</button>
         </div>
 
 
