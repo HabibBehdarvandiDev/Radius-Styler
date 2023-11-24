@@ -45,6 +45,9 @@ export default function Home() {
       <section
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent flex flex-col w-4/5 lg:w-6/12 xl:w-4/12"
       >
+
+        <h1 className="self-center text-2xl text-white font-bold -mt-6">Radius Styler</h1>
+
         <div className="flex justify-between align-middle">
           <div className="input-wrapper bg-gray-700 w-fit overflow-hidden rounded-lg my-2">
             <span className="px-2 text-white">px</span>
