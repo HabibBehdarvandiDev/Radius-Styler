@@ -10,16 +10,28 @@ export default function Home() {
 
   const handleTopLeft = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
+    setTopLeft(e.target.value)
   }
   const handleTopRight = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
+    setTopRight(e.target.value)
   }
   const handleBottomLeft = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
+    setBottomLeft(e.target.value);
   }
   const handleBottomRight = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
+    setBottomRight(e.target.value)
   }
+
+  const shapeStyle = {
+    borderTopLeftRadius: topLeft ? `${topLeft}px` : '0',
+    borderTopRightRadius: topRight ? `${topRight}px` : '0',
+    borderBottomLeftRadius: bottomLeft ? `${bottomLeft}px` : '0',
+    borderBottomRightRadius: bottomRight ? `${bottomRight}px` : '0',
+  };
+
 
   return (
     <main className="relative w-screen h-screen bg-gray-800">
@@ -46,7 +58,8 @@ export default function Home() {
 
 
         <div
-          className={`bg-white bg-opacity-25 border-white border-2 text-white self-center w-4/5 h-4/5 min-h-[80px] flex justify-center items-center rounded-tl-[${topLeft}px] rounded-tr-[${topRight}px] rounded-bl-[${bottomLeft}px] rounded-br-[${bottomRight}px]`}
+          className={`bg-white bg-opacity-25 border-white border-2 text-white self-center w-4/5 h-4/5 min-h-[80px] flex justify-center items-center duration-500`}
+          style={shapeStyle}
         >
           shape
         </div>
