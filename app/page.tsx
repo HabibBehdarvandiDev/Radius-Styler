@@ -2,10 +2,10 @@
 import { useState } from "react"
 
 interface shapeStyle {
-  borderTopLeftRadius: String;
-  borderTopRightRadius: String;
-  borderBottomLeftRadius: String;
-  borderBottomRightRadius: String;
+  borderTopLeftRadius: string;
+  borderTopRightRadius: string;
+  borderBottomLeftRadius: string;
+  borderBottomRightRadius: string;
 }
 
 export default function Home() {
