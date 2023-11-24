@@ -3,10 +3,23 @@ import { useState } from "react"
 
 
 export default function Home() {
-  const [topLeft,setTopLeft] = useState<String>();
-  const [topRight,setTopRight] = useState<String>();
-  const [bottomLeft,setBottomLeft] = useState<String>();
-  const [bottomRight,setBottomRight] = useState<String>();
+  const [topLeft, setTopLeft] = useState<String>();
+  const [topRight, setTopRight] = useState<String>();
+  const [bottomLeft, setBottomLeft] = useState<String>();
+  const [bottomRight, setBottomRight] = useState<String>();
+
+  const handleTopLeft = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  }
+  const handleTopRight = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  }
+  const handleBottomLeft = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  }
+  const handleBottomRight = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  }
 
   return (
     <main className="relative w-screen h-screen bg-gray-800">
@@ -18,12 +31,14 @@ export default function Home() {
             <span className="px-2 text-white">px</span>
             <input type="number" name="top left" id="topLeft"
               className="w-10 h-10 text-center bg-gray-600 text-white"
+              onChange={(e) => handleTopLeft(e)}
             />
           </div>
 
           <div className="input-wrapper bg-gray-700 w-fit overflow-hidden rounded-lg my-2">
             <input type="number" name="top right" id="topRight"
               className="w-10 h-10 text-center bg-gray-600 text-white"
+              onChange={(e) => handleTopRight(e)}
             />
             <span className="px-2 text-white">px</span>
           </div>
@@ -31,7 +46,7 @@ export default function Home() {
 
 
         <div
-          className="bg-white bg-opacity-25 border-white border-2 text-white self-center w-4/5 h-4/5 min-h-[80px] flex justify-center items-center"
+          className={`bg-white bg-opacity-25 border-white border-2 text-white self-center w-4/5 h-4/5 min-h-[80px] flex justify-center items-center rounded-tl-[${topLeft}px] rounded-tr-[${topRight}px] rounded-bl-[${bottomLeft}px] rounded-br-[${bottomRight}px]`}
         >
           shape
         </div>
@@ -42,12 +57,17 @@ export default function Home() {
             <span className="px-2 text-white">px</span>
             <input type="number" name="bottom left" id="bottomLeft"
               className="w-10 h-10 text-center bg-gray-600 text-white"
+              onChange={(e) => handleBottomLeft(e)}
             />
           </div>
+
+          <button className="px-6 py-2 text-white bg-blue-600 rounded-lg text-center flex justify-center align-middle items-center self-center">Reset</button>
+
 
           <div className="input-wrapper bg-gray-700 w-fit overflow-hidden rounded-lg my-2">
             <input type="number" name="bottom right" id="bottomRight"
               className="w-10 h-10 text-center bg-gray-600 text-white"
+              onChange={(e) => handleBottomRight(e)}
             />
             <span className="px-2 text-white">px</span>
           </div>
