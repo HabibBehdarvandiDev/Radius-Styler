@@ -1,6 +1,12 @@
 "use client"
 import { useState } from "react"
 
+interface shapeStyle {
+  borderTopLeftRadius: String;
+  borderTopRightRadius: String;
+  borderBottomLeftRadius: String;
+  borderBottomRightRadius: String;
+}
 
 export default function Home() {
   const [topLeft, setTopLeft] = useState<String>();
@@ -25,7 +31,8 @@ export default function Home() {
     setBottomRight(e.target.value)
   }
 
-  const shapeStyle = {
+
+  const shapeStyle: shapeStyle = {
     borderTopLeftRadius: topLeft ? `${topLeft}px` : '0',
     borderTopRightRadius: topRight ? `${topRight}px` : '0',
     borderBottomLeftRadius: bottomLeft ? `${bottomLeft}px` : '0',
@@ -58,7 +65,7 @@ export default function Home() {
 
 
         <div
-          className={`bg-white bg-opacity-25 border-white border-2 text-white self-center w-4/5 h-4/5 min-h-[80px] flex justify-center items-center duration-500`}
+          className={`bg-white bg-opacity-25 border-white border-2 text-white self-center w-full min-h-[80px] flex justify-center items-center duration-500`}
           style={shapeStyle}
         >
           shape
@@ -74,7 +81,10 @@ export default function Home() {
             />
           </div>
 
-          <button className="px-6 py-2 text-white bg-blue-600 rounded-lg text-center flex justify-center align-middle items-center self-center">Reset</button>
+          <button
+            className="px-6 py-2 text-white bg-blue-600 rounded-lg text-center flex justify-center align-middle items-center self-center"
+            onClick={handleReset}
+          >Reset</button>
 
 
           <div className="input-wrapper bg-gray-700 w-fit overflow-hidden rounded-lg my-2">
@@ -85,6 +95,25 @@ export default function Home() {
             <span className="px-2 text-white">px</span>
           </div>
         </div>
+
+
+        <div className="bg-gray-700 w-full rounded-md flex flex-col my-6 p-4 text-white">
+          {
+            (
+              <div>
+                <code>
+                  {'{'}<br />
+                  <span>border : 1rem solid white</span>
+                  <br />
+                  <span>border-radius : {shapeStyle.borderTopLeftRadius} {shapeStyle.borderTopRightRadius} {shapeStyle.borderBottomLeftRadius} {shapeStyle.borderBottomRightRadius}</span>
+                  <br />{'}'}
+                </code>
+              </div>
+            )
+          }
+        </div>
+
+
       </section>
     </main>
   )
